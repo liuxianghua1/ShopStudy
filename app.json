@@ -16,16 +16,16 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#eb4450",
     "navigationBarTitleText": "商城",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"white"
   },
   "tabBar": {
     "color": "#999",
-    "selectedColor": "#FC314F",
-    "backgroundColor": "",
+    "selectedColor": "#999",
+    "backgroundColor": "#ffffff",
     "position": "bottom",
-    "borderStyle": "black",
+    "borderStyle": "white",
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -47,9 +47,9 @@
       },
       {
         "pagePath": "pages/user/index",
-        "text": "我的",
-        "iconPath": "icons/my.png",
-        "selectedIconPath": "icons/my-o.png"
+        "text": "用户",
+        "iconPath": "icons/user.png",
+        "selectedIconPath": "icons/user-o.png"
       }
     ]
   },
