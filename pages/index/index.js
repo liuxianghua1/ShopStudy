@@ -26,7 +26,7 @@ Page({
       url: "https://api-hmugo-web.itheima.net/api/public/v1/home/catitems",
     }).then((res) => {
       this.setData({
-        CateList: res.data.message,
+        cateList: res.data.message,
       });
     });
   },

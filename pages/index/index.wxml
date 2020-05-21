@@ -13,6 +13,10 @@
     </view>
     <!-- 轮播图结束 -->
     <!-- 导航开始 -->
+    <view class="index_cate">
+        <navigator wx:for="{{cateList}}" wx:key="name">
+            <image mode="widthFix" src="{{item.image_src}}" />
+        </navigator>
+    </view>
     <!-- 导航结束 -->
-
 </view>

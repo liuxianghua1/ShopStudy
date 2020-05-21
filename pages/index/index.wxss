@@ -9,3 +9,13 @@ view {
 .index_swiper swiper image {
   width: 100%;
 }
+.index_cate {
+  display: flex;
+}
+.index_cate navigator {
+  flex: 1;
+  padding: 20rpx;
+}
+.index_cate navigator image {
+  width: 100%;
+}
