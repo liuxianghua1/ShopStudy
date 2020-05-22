@@ -1,6 +1,6 @@
 <view class="pyg_index">
-    <!-- <SearchInput></SearchInput> -->
-    <van-search value="{{ value }}" shape="round" background="#eb4450" placeholder="请输入搜索关键词" />
+    <SearchInput></SearchInput>
+    <!-- <van-search value="{{ value }}" shape="round" background="#eb4450" placeholder="请输入搜索关键词" /> -->
     <!-- 轮播图开始 -->
     <view class="index_swiper">
         <!-- 轮播图标签有默认的宽度和高度  图片标签也有默认的宽高 -->

@@ -1,7 +1,11 @@
-<view class="search_input">
-    <navigator class="search_navigator" url="/pages/search/index" open-type="navigate">
+<view >
+    <!-- <navigator class="search_navigator" url="/pages/search/index" open-type="navigate">
         搜索
     </navigator>
-      
+       -->
+       <navigator url="/pages/search/index">
+    <van-search value="{{ value }}" 
+ shape="round" background="#eb4450" disabled placeholder="请输入搜索关键词" />
+    </navigator>
 </view>
   

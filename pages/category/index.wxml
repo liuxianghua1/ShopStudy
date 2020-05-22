@@ -1,6 +1,5 @@
 <view class="cates">
-    <!-- <SearchInput></SearchInput> -->
-    <van-search value="{{ value }}" shape="round" background="#eb4450" placeholder="请输入搜索关键词" />
+    <SearchInput></SearchInput>
     <view class="cates_container">
         <scroll-view scroll-y="{{true}}" class="left_ment">
             <view class="menu_item {{index === currentIndex ? 'active' : ''}}" wx:for="{{leftMentList}}" wx:key="*this" bindtap="handleItemTap" data-index="{{index}}">
@@ -15,7 +14,7 @@
                     <text class="delimiter">/</text>
                 </view>
                 <view class="goods_list">
-                    <navigator wx:for="{{item1.children}}" wx:for-index="index2" wx:for-item="item2" wx:key="cat_id">
+                    <navigator url="/pages/goods_list/index?cid={{item2.cat_id}}" wx:for="{{item1.children}}" wx:for-index="index2" wx:for-item="item2" wx:key="cat_id" >
                         <image mode="widthFix" src="{{item2.cat_icon}}"></image>
                         <view class="goods_name">{{item2.cat_name}}</view>
                     </navigator>
