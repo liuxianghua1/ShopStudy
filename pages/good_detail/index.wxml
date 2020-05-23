@@ -1,2 +1,43 @@
-<!--pages/good_detail/index.wxml-->
-<text>pages/good_detail/index.wxml</text>
+<van-toast id="van-toast" />
+<view class="detail_swiper">
+    <!-- 轮播图标签有默认的宽度和高度  图片标签也有默认的宽高 -->
+    <swiper autoplay="{{true}}" circular="{{true}}" indicator-dots="{{true}}">
+        <swiper-item wx:for="{{goodsDetail.pics}}" wx:key="pics_id" bindtap="handlePrevewImage" data-url="{{item.pics_mid}}">
+            <!-- <navigator> -->
+            <image mode="widthFix" src="{{item.pics_big}}"></image>
+            <!-- </navigator> -->
+        </swiper-item>
+    </swiper>
+</view>
+<view class="goods_price">
+    <van-cell center>
+        <view slot="title">
+            <view class="van-cell-text" style="color:red">￥{{goodsDetail.goods_price}}</view>
+        </view>
+        <view slot="title">
+            <view>{{goodsDetail.goods_name}}</view>
+        </view>
+        <view slot="right-icon">
+            收藏
+            <van-icon name="star-o" />
+        </view>
+    </van-cell>
+</view>
+<view class="goods_info">
+    <van-collapse value="{{ activeNames }}" bind:change="onChange">
+        <van-collapse-item title="图文详情" name="1">
+            <view>
+                <rich-text class='content' nodes="{{goodsDetail.goods_introduce}}"></rich-text>
+            </view>
+        </van-collapse-item>
+    </van-collapse>
+</view>
+<view class="btm_tool">
+    <van-goods-action>
+        <van-goods-action-icon icon="chat-o" open-type="contact" text="客服" />
+        <van-goods-action-icon icon="cart-o" link-type="switchTab" url="/pages/cart/index" text="购物车" />
+        <van-goods-action-icon icon="friends-o" open-type="share" text="分享" />
+        <van-goods-action-button text="加入购物车" bind:click="handleCart" type="warning" />
+        <van-goods-action-button text="立即购买" />
+    </van-goods-action>
+</view>
