@@ -1,1 +1,55 @@
 /* pages/cart/index.wxss */
+page {
+  padding-bottom: 106px;
+}
+
+.van-swipe-cell__left,
+.van-swipe-cell__right {
+  display: inline-block;
+  width: 65px;
+  height: 44px;
+  font-size: 15px;
+  line-height: 44px;
+  color: #fff;
+  text-align: center;
+  background-color: #f44;
+}
+
+.van-card {
+  width: 100%;
+}
+
+.delete {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+
+
+/* 未选中的 背景样式 */
+checkbox .wx-checkbox-input {
+  border-radius: 50%;
+  /* 圆角 */
+
+  /* 背景的高 */
+}
+
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  border: 1rpx solid #E94654;
+  background: #E94654;
+}
+
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%;
+  /* 圆角 */
+  text-align: center;
+  color: #fff;
+  /* 对勾颜色 白色 */
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}

@@ -12,7 +12,7 @@
 <view class="goods_price">
     <van-cell center>
         <view slot="title">
-            <view class="van-cell-text" style="color:red">￥{{goodsDetail.goods_price}}</view>
+            <view class="van-cell-text" style="color:red">￥{{goodsDetail.goods_price}} 库存:{{goodsDetail.goods_number}}</view>
         </view>
         <view slot="title">
             <view>{{goodsDetail.goods_name}}</view>

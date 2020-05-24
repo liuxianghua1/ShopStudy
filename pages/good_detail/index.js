@@ -31,6 +31,7 @@ Page({
     if (index === -1) {
       // 不存在
       this.GoodsInfo.num = 1;
+      this.GoodsInfo.checked = true;
       cart.push(this.GoodsInfo);
     } else {
       // 存在 数量加1
@@ -64,6 +65,7 @@ Page({
           /\.webp/g,
           ".jpg"
         ),
+        goods_number:res.data.message.goods_number
       },
     });
     this.GoodsInfo = res.data.message;

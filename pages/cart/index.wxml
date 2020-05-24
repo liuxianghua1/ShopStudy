@@ -1,2 +1,40 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<!-- pages/cart/index.wxml -->
+    <van-dialog id="van-dialog" />
+<view wx:if="{{CartData.length>0}}">
+    <van-swipe-cell data-id='{{item.goods_id}}' bind:click="onDelete" right-width="{{ 65 }}" wx:for="{{CartData}}" wx:key="index">
+        <van-card num="{{item.num}}" price="{{item.goods_price}}">
+            <view bindtap="goDetail" data-id='{{item.goods_id}}' slot="title">
+                {{item.goods_name}}
+            </view>
+            <view bindtap="goDetail" data-id='{{item.goods_id}}' slot="thumb">
+                <image mode="widthFix" src="{{item.goods_small_logo}}" />
+            </view>
+            <view slot="footer">
+                <van-stepper max="{{item.goods_number}}" data-id='{{item.goods_id}}' value="{{item.num}}" bind:change="handleNumChange" />
+            </view>
+            <view slot="price-top">
+                <checkbox-group data-id='{{item.goods_id}}' bindchange="handleItemChange">
+                    <checkbox checked="{{item.checked}}"></checkbox>
+                </checkbox-group>
+            </view>
+        </van-card>
+        <view slot="right" class="delete">删除</view>
+    </van-swipe-cell>
+</view>
+<view wx:else>
+    <image src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590312557845&di=f0196c6c73adc4fc58691781b717736c&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fe1b1467beea0a9c7d6a56b32bac6d7e5dcd914f7c3e6-YTwUd6_fw658" mode="widthFix" />
+</view>
+<view>
+    <van-submit-bar price="{{totalPrice}}" suffix-label="({{totalNum}})" button-text="提交订单" bind:submit="handlePay" tip="{{ false }}">
+        <checkbox-group bindchange="handleItemAllChange">
+            <checkbox checked="{{allChecked}}">全选</checkbox>
+        </checkbox-group>
+        <view slot="tip" wx:if="{{!addRess.userName}}">
+            请先获取地址,
+            <span bindtap="handleChooseAddress" style="color: #1989fa">获取地址</span>
+        </view>
+        <view wx:else slot="tip">
+            {{addRess.userName + '\t'+addRess.telNumber +'\t'+ addRess.provinceName+addRess.cityName+addRess.countyName+addRess.detailInfo}}
+        </view>
+    </van-submit-bar>
+</view>
