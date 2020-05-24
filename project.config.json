@@ -89,6 +89,13 @@
 					"pathName": "pages/cart/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/pay/index",
+					"pathName": "pages/pay/index",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

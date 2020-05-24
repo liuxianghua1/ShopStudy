@@ -1,2 +1,5 @@
-<!--pages/pay/index.wxml-->
-<text>pages/pay/index.wxml</text>
+<view>
+    <van-panel title="{{addRess.userName}}" desc="{{addRess.provinceName+addRess.cityName+addRess.countyName+addRess.detailInfo}}" status="{{addRess.telNumber}}"></van-panel>
+    <van-card num="{{item.num}}" price="{{item.goods_price}}" title="{{item.goods_name}}" thumb="{{item.goods_small_logo}}" wx:for="{{CartData}}" wx:key="{{item.goods_id}}" />
+    <van-submit-bar price="{{ totalPrice }}" suffix-label="({{totalNum}})" button-text="结算" bind:submit="onSubmit" />
+</view>

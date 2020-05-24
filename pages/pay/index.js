@@ -1,66 +1,34 @@
-// pages/pay/index.js
+// pages/cart/index.js
+import Dialog from "../../miniprogram_npm/@vant/weapp/dialog/dialog";
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+    CartData: [],
+    addRess: {},
+    totalPrice: 0,
+    totalNum: 0,
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-
+    let addRess = wx.getStorageSync("address");
+    console.log(addRess);
+    let CartData = wx.getStorageSync("cart") || [];
+    CartData = CartData.filter((v) => v.checked);
+    let totalPrice = 0;
+    let totalNum = 0;
+    CartData.forEach((v) => {
+      totalPrice += v.num * v.goods_price;
+      totalNum += v.num;
+    });
+    totalPrice = parseInt(totalPrice.toString() + "00" + ".00");
+    this.setData({
+      CartData,
+      addRess,
+      totalPrice,
+      totalNum,
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
-})
+  handlePay() {},
+});

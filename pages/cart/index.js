@@ -7,9 +7,9 @@ Page({
   data: {
     CartData: [],
     addRess: {},
-    allChecked: false,
     totalPrice: 0,
     totalNum: 0,
+    allChecked: false,
   },
 
   /**
